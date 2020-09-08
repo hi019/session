@@ -154,7 +154,7 @@ func New(config ...Config) *Session {
 
 // Get store
 func (s *Session) Get(ctx *fiber.Ctx) *Store {
-	fstore, _ := s.core.Get(ctx.Fasthttp)
+	fstore, _ := s.core.Get(ctx.Request())
 	return &Store{
 		ctx:  ctx,
 		sess: s,
